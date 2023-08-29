@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch</title>
+</head>
+<body>
+    <script>
+        // var month = Number(prompt('몇 월?'));
+
+        // switch(month){
+        //     default: document.write('에러'); break;
+        //     case 1: case 2: case 12: 
+        //         document.write('겨울'); break;
+        //     case 3: case 4: case 5:
+        //         document.write('봄'); break;
+        //     case 6: case 7: case 8:
+        //         document.write('여름'); break;
+        //     case 9: case 10: case 11:
+        //         document.write('가을'); break;
+        // }
+
+        var site = prompt("네이버, 다음, 네이트, 구글 중 \
+            즐겨 사용하는 포털 검색 사이트는?","");
+        var url;
+        
+        switch(site){
+            default: alert("보기 중에 없는 사이트입니다.");
+            case "구글": url = "www.google.com"; break;
+        }
+
+        if(url) location.href = "http://" + url;
+    </script>
+</body>
+</html>

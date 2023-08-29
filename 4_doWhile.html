@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>doWhile</title>
+</head>
+<body>
+    <script>
+        /*
+            while(조건식){
+                조건식이 참이면 반복하여 실행
+            }
+
+            do{
+                반복하며 실행
+            }while(조건식); // 조건식이 참이면 do로 이동
+        */
+
+        // do{
+        //     var n = Number(prompt('0을 입력하면 반복 종료'));
+        //     document.write(n+'<br/>');
+        // }while(n);
+        
+        var sum = 0;
+
+        do{
+            var n = Number(prompt('누적해서 더할 값을 입력'));
+            sum += n;
+        }while(n);
+        document.write(sum);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for</title>
+</head>
+<body>
+    <script>
+        /*
+            초기식->조건식->반복내용->증감식->조건식->반복내용->증감식->조건식거짓
+            for(초기식; 조건식; 증감식){
+                반복할 내용
+            }
+        */
+            
+        // var i=0;
+
+        // for(var i=1; i<=10; i++){
+        //     document.write(i+"<br/>");
+        // }
+        // document.write(i+"<br/>");
+
+
+        // for(var i=1, j=0; i<=10 && j<=15; i++, j+=2){
+        //     document.write(i+", "+j+"<br/>");
+        // }
+        // document.write(i+", "+j+"<br/>");
+        
+
+        // var cnt = 0;
+        // for(;;){
+        //     if(cnt > 10){
+        //         break;
+        //     }
+        //     document.write(cnt++ +' hello<br/>');
+        // }
+
+        // var cnt = 0;
+        // for(;;){
+        //     cnt++;
+        //     if(cnt == 10){
+        //         break; // 반복 멈춤
+        //     }
+        //     if(cnt == 5){
+        //         continue; // 다음 반복으로 이동 (건너띄기)
+        //     }
+        //     document.write(cnt +' hello<br/>');
+        // }
+
+        for(var i=1; i<10; i++){
+            if(i % 2 == 0) continue;
+            document.write(i, "<br/>");
+        }
+        document.write("=== The End ===");
+
+    </script>
+</body>
+</html>

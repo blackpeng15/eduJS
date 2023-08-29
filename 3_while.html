@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while</title>
+
+    <link rel="stylesheet" href="./css/while.css"/>
+</head>
+<body>
+    <style>
+        /* @import url('./css/while.css') */
+        /* .blue { color: green;} */
+    </style>
+    <script>
+        // var n = 10;
+        // var m = 20
+
+        // while(n > 0){
+        //     document.write(n-- + "<br/>");
+        // }
+
+        // document.write("<br/>");
+
+        // while(true){
+        //     if(m < 0){
+        //         break;
+        //     }
+        //     document.write(m-- +"<br/>");
+        // }
+
+        var i = 20;
+
+        while(i >= 10){
+            if(i==17){
+                document.write("<p id='num17' class='txt'>" +i+ "</p>");
+            }else {
+                if(i % 2 == 0){
+                    document.write("<p class='txt blue'>" +i+ "</p>");
+                }else {
+                    document.write("<p class='txt red'>" +i+ "</p>");
+                }
+            }
+
+            i--;
+        }
+    </script>
+</body>
+</html>

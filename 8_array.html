@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+</head>
+<body>
+    
+    <script>
+        var arr1 = new Array();
+        arr1[0] = 30;
+        arr1[1] = "따르릉";
+        arr1[2] = true;
+        arr1[3] = 111;
+        console.dir(arr1);
+        console.log(arr1.length);
+
+        var arr2 = new Array(22, "hello", false);
+        arr2[3] = 300;
+        console.dir(arr2);
+
+        var arr3 = [55, "삐로롱", true, arr1, arr2];
+        console.dir(arr3);
+        for(var i=0; i<arr3.length; i++){
+            document.write(arr3[i], "<br/>");
+        }
+        for(var i in arr3){
+            document.write(arr3[i], "<br/>");
+        }
+
+    </script>
+</body>
+</html>
