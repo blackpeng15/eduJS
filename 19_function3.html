@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수_객체와 변수</title>
+</head>
+<body>
+    <script>
+        function f01(){
+            document.write('f01....<br/>');
+        }
+        function f02(){
+            document.write('f02....<br/>');
+        }
+        function f03(){
+            document.write('f03....<br/>');
+        }
+        var f04 = function(){
+            document.write('f04....<br/>');
+        }
+        var tmp = [f01, f02, f03, f04];
+        for(var i=0; i<tmp.length; i++){
+            tmp[i]();
+        }
+    </script>
+</body>
+</html>

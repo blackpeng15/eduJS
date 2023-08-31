@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수_셋어트리뷰트</title>
+</head>
+<body>
+    <div id="galleryZone">
+        <p>
+            <img src="images/pic_1.jpg" id="photo" alt="" style="width: 500px; height: 500px;">
+        </p>
+        <p>
+            <button onClick="gallery(0)">이전</button>
+            <button onClick="gallery(1)">다음</button>
+        </p>
+    </div>
+
+    <script>
+        var num = 1;
+
+        function gallery(direct){
+            if(direct) { // 1
+                if(num == 8) {
+                    return;          // 중괄호 안에 넣은 방식
+                }
+                num++;
+            } else {  // 0
+                if(num == 1) return;     // 한 줄로 쓸 때 중괄호 생략한 방식
+                num--;
+            }
+
+            var imgTag = document.getElementById("photo");
+            imgTag.setAttribute("src", "images/pic_" + num + ".jpg");
+        }
+    </script>
+</body>
+</html>

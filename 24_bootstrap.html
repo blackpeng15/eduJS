@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부트스트랩</title>
+
+    <!-- 부트스트랩 CSS 연결-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <!-- // 부트스트랩 CSS 연결-->
+
+    <!-- 부트스트랩 JS 연결-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- // 부트스트랩 JS 연결-->
+</head>
+<body>
+
+    <div class="input-group mt-5 mb-4 ps-5 pe-5">
+        <label for="name" class="col-form-label ms-3 me-3 fw-bold">학생 이름</label>
+        <input type="text" id="name" class="form-control" placeholder="이름을 입력하세요.">
+
+        <label for="korScore" class="col-form-label ms-5 me-3 fw-bold">국어 점수</label>
+        <input type="number" id="korScore" class="form-control" placeholder="국어 점수를 입력하세요">
+
+        <label for="engScore" class="col-form-label ms-5 me-3 fw-bold">영어 점수</label>
+        <input type="number" id="engScore" class="form-control" placeholder="영어 점수를 입력하세요">
+
+        <label for="mathScore" class="col-form-label ms-5 me-3 fw-bold">수학 점수</label>
+        <input type="number" id="mathScore" class="form-control" placeholder="수학 점수를 입력하세요">
+        
+        <button class="btn btn-danger ms-4" type="button" id="button-addon" style="border-radius: 8px;" onClick="addStudent();">추가</button>
+    </div>
+
+    <script>
+
+        function addStudent(){
+            const name = document.getElementById('name').value;
+            const korScore = document.getElementById('korScore').value;
+            const engScore = document.getElementById('engScore').value;
+            const mathScore = document.getElementById('mathScore').value;
+            
+            var tbody = document.querySelector('tbody');
+            var tr1 = document.createElement('tr');
+            var th1 = document.createElement('th');
+            var td1 = document.createElement('td');
+            td1.textContent = name;
+            var td2 = document.createElement('td');
+            td2.textContent = korScore;
+            var td3 = document.createElement('td');
+            td3.textContent = engScore;
+            var td4 = document.createElement('td');
+            td4.textContent = mathScore;
+
+            tr1.appendChild(th1);
+            tr1.appendChild(td1);
+            tr1.appendChild(td2);
+            tr1.appendChild(td3);
+            tr1.appendChild(td4);
+
+            var lastChild = tbody.lastChild;
+            var firstChild = lastChild.firstChild;
+            th1.textContent = Number(firstChild.textContent)+1;
+            tbody.appendChild(tr1);
+
+            // var tbodyTag = document.getElementsByTagName('tbody');
+            // tbodyTag[0].innerHTML = `<tr><th>6</th><td>${name}</td><td>${korScore}</td><td>${engScore}</td><td>${mathScore}</td></tr>`
+
+        }
+
+        class Student{
+            constructor(name, kor, eng, math){
+                this.name = name;
+                this.kor = kor;
+                this.eng = eng;
+                this.math = math;
+            }
+        }
+
+        var stu = [new Student('아이유', 93, 85, 100),
+            new Student('유인나', 77, 91, 92),
+            new Student('카리나', 83, 78, 95),
+            new Student('윈터', 72, 82, 87),
+            new Student('권지용', 65, 77, 83)]
+        // console.dir(stu)
+
+        function getStuName(strings, name){ // 템플릿 리터럴에서 파싱할 함수
+            // console.log(strings);
+            // console.log(name);
+            if(name == '아이유'){
+                return strings[0] + name + '짱짱' + strings[1];
+            }
+            return strings[0] + name + '님' + strings[1];
+        }
+        
+        document.write('<table class="table table-striped">');
+        document.write('<thead class="table-dark">');
+        document.write('<tr>');
+        document.write('<th scope="col">번호</th>');
+        document.write('<th scope="col">이름</th>');
+        document.write('<th scope="col">국어</th>');
+        document.write('<th scope="col">영어</th>');
+        document.write('<th scope="col">수학</th>');
+        document.write('</tr>');
+        document.write('</thead>');
+
+        document.write('<tbody>');
+        for(var i=0; i<stu.length; i++){
+            document.write('<tr>');
+            // `${i+1}` // 템플릿 리터럴
+            document.write(`<th scope="row">${i+1}</th>`);
+            document.write(getStuName`<td>${stu[i].name}</td>`);
+            document.write(`<td>${stu[i].kor}</td>`);
+            document.write(`<td>${stu[i].eng}</td>`);
+            document.write(`<td>${stu[i].math}</td>`);
+            document.write('</tr>');
+        }
+        document.write('</tbody>');
+
+        document.write('</table>');
+
+    </script>
+</body>
+</html>

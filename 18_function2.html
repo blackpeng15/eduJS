@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수_재귀함수</title>
+</head>
+<body>
+    
+    <script>
+        // var num = 0;
+
+        function testFnc(num){
+            document.write('testFnc 실행' + num, '<br/>');
+            if(num == 10) return num; // num이 10일때만 여기서 종료
+            var result = testFnc(num+1); // 재귀호출 (2~10번째까지)
+            document.write('result : ' + result + ' --- ');
+            document.write('testFun 종료 <br/>');
+            return num; // num이 10이 아닐 땐 여기서 종료
+        }
+        var result = testFnc(1); // 처음 호출
+        document.write('result : ' + result + ' --- ');
+        document.write('프로그램 종료(최종) <br/>');
+    </script>
+</body>
+</html>

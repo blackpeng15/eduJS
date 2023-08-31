@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수_scope(범위)_전역변수와 지역변수</title>
+</head>
+<body>
+    <script>
+        function myFnc(){
+            document.write('myFnc() 전역함수 <br/>');
+        }
+        function outerFnc(){
+            function myFnc(){
+                document.write('myFnc() 지역함수2 <br/>');
+            }
+            return myFnc;
+        }
+        // myFnc(); // 전역함수
+
+        // var result = outerFnc();
+        // result();
+        outerFnc()();
+    </script>    
+</body>
+</html>

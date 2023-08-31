@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스</title>
+</head>
+<body>
+    <script>
+        class Car {
+            constructor(model, color){  // 생성자 (매개변수들)
+                this.model = model;
+                this.color = color;
+            }
+            showInfo(){  // 메소드
+                console.log('model : ', this.model);
+                console.log('color : ', this.color);
+            }
+            static printModel(){  // static = 정적 메소드
+                console.log('printModel');
+            }
+            static printColor = 'Black';
+        }
+
+        var car1 = new Car('k5', 'white');
+
+        car1.showInfo();
+
+        Car.printModel();
+
+        console.log(Car.printColor);
+        
+        console.log(car1);
+        console.dir(Car);
+        
+    </script>
+</body>
+</html>
